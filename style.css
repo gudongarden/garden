@@ -1,0 +1,677 @@
+import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: import#fbf2c0;
+  font-family: 'Pixelify Sans', monospace;
+  color: #4b526b;
+  image-rendering: pixelated;
+}
+
+/* ───────────────
+   PÁGINA
+─────────────── */
+
+.garden {
+  min-height: 100vh;
+  padding: 30px 15px;
+}
+
+/* ───────────────
+   TÍTULO
+─────────────── */
+
+.garden-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.garden-header h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 0 #ffc8dd;
+}
+
+.leaf {
+  font-size: 26px;
+}
+
+/* ───────────────
+   JANELA
+─────────────── */
+
+.garden-window {
+  width: min(900px, 100%);
+  margin: auto;
+  background: white;
+  border: 4px solid #4b526b;
+  box-shadow: 8px 8px 0 #a2d2ff;
+}
+
+/* barra superior */
+
+.window-top {
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 14px;
+
+  background: #ffc8dd;
+  border-bottom: 4px solid #4b526b;
+
+  font-size: 17px;
+}
+
+/* ───────────────
+   JARDIM
+─────────────── */
+
+.garden-area {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+
+  background: #a2d2ff;
+}
+
+/* céu */
+
+.sky {
+  position: absolute;
+  inset: 0 0 42% 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #002d5c 0%,
+      #2595ff 45%,
+      #fff1c7 72%,
+      #f89c00 100%
+    );
+
+  padding: 30px;
+
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+/* nuvens */
+
+.sky::before {
+
+  content: "☁︎       ☁︎            ☁︎";
+
+  position: absolute;
+
+  top: 45px;
+  left: 8%;
+
+  font-size: 30px;
+
+  color: #ffffff;
+
+  opacity: 0.75;
+
+  letter-spacing: 18px;
+
+  animation: cloudsMove 18s linear infinite;
+  }
+.sky::before {
+  content: "☁︎       ☁︎            ☁︎";
+
+  position: absolute;
+
+  top: 45px;
+  left: 8%;
+
+  font-size: 30px;
+
+  color: #ffffff;
+
+  opacity: 0.75;
+
+  letter-spacing: 18px;
+
+  animation: cloudsMove 18s linear infinite;
+}
+
+@keyframes cloudsMove {
+
+  0% {
+    transform: translateX(-15px);
+  }
+
+  50% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(-15px);
+  }
+
+}
+/* estrelinhas */
+
+.sky::after {
+  content: "✦    ✧       ✦          ✧      ✦";
+
+  position: absolute;
+
+  top: 105px;
+  right: 8%;
+
+  font-size: 15px;
+
+  color: #fff7c7;
+
+  letter-spacing: 12px;
+
+  animation: starsTwinkle 3s ease-in-out infinite;
+  }
+
+@keyframes starsTwinkle {
+
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+/* ───────────────
+   GRAMA
+─────────────── */
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 48%;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #b8d98a 0px,
+      #93c74b 18px,
+      #4e7616 18px,
+      #313a2373 20px
+    );
+
+  border-top: 5px solid #4b526b;
+}
+
+/* chão pixelado */
+
+.grass::before {
+  content: "⌁  ⌁   ⌁    ⌁  ⌁   ⌁    ⌁";
+
+  position: absolute;
+  top: 20px;
+  left: 5%;
+
+  width: 90%;
+
+  font-size: 25px;
+  color: #86b66f;
+  letter-spacing: 12px;
+}
+
+/* ───────────────
+   PLANTINHAS
+─────────────── */
+
+.plant {
+  position: absolute;
+  z-index: 3;
+
+  font-size: 34px;
+
+  filter: drop-shadow(2px 2px 0 #4b526b);
+}
+
+.plant-1 {
+  left: 5%;
+  bottom:90%;
+}
+
+.plant-2 {
+  left: 22%;
+  bottom:60%;
+}
+
+.plant-3 {
+  left:85%;
+  bottom:15%;
+}
+
+.plant-4 {
+  left: 55%;
+  bottom: 35%;
+}
+
+.plant-5 {
+  right:10%;
+  bottom:10%;
+}
+
+.plant-6 {
+  right:15%;
+  bottom:25%;
+}
+
+.plant-7 {
+  right:35%;
+  bottom:25%;
+}
+
+/* ───────────────
+   DELEITE
+─────────────── */
+
+.snail {
+  position: absolute;
+
+  left: 47%;
+  bottom: 8%;
+
+  z-index: 5;
+
+  font-size: 58px;
+
+  filter: drop-shadow(3px 3px 0 #4b526b);
+
+  animation: snailMove 4s ease-in-out infinite;
+}
+
+@keyframes snailMove {
+
+  0% {
+    transform: translateX(-8px);
+  }
+
+  50% {
+    transform: translateX(8px);
+  }
+
+  100% {
+    transform: translateX(-8px);
+  }
+
+}
+
+/* ───────────────
+   RODAPÉ
+─────────────── */
+
+.garden-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 14px;
+
+  background: #fff1a8;
+
+  border-top: 4px solid #4b526b;
+
+  font-size: 14px;
+}
+
+/* ───────────────
+   CELULAR
+─────────────── */
+
+@media (max-width: 600px) {
+
+  .garden {
+    padding: 18px 10px;
+  }
+
+  .garden-header h1 {
+    font-size: 34px;
+  }
+
+  .garden-area {
+    min-height: 480px;
+  }
+
+  .garden-footer {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+}
+
+/* ───────────────
+   ESPIRAIS
+─────────────── */
+
+.spiral {
+  position: absolute;
+  z-index: 10;
+
+  font-size: 22px;
+
+  opacity: 0.65;
+
+  animation: spiralFloat 4s ease-in-out infinite;
+}
+
+.spiral-1 {
+  top: 15%;
+  left: 12%;
+}
+
+.spiral-2 {
+  top: 25%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.spiral-3 {
+  top: 48%;
+  left: 25%;
+  animation-delay: 2s;
+}
+
+.spiral-4 {
+  top: 55%;
+  right: 28%;
+  animation-delay: 3s;
+}
+
+@keyframes spiralFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+  }
+
+}
+/* ───────────────
+   PLAQUINHA DO JARDIM
+─────────────── */
+
+.garden-sign {
+  position: absolute;
+
+  left: 50%;
+  top:25%;
+
+  transform: translateX(-50%);
+
+  padding: 8px 18px;
+
+  background: #fff1a8cd;
+
+  border: 3px solid #4b526b;
+
+  box-shadow: 4px 4px 0 #ffc8dd;
+
+  font-size: 15px;
+
+  white-space: nowrap;
+
+  z-index: 8;
+}
+
+.garden-sign span {
+  margin: 0 5px;
+}
+
+.snail-house {
+  position: absolute;
+  z-index: 2;
+
+  left: 60%;
+  bottom: 25%;
+
+  font-size: 70px;
+
+  filter: drop-shadow(3px 3px 0 #4b526b);
+}
+.snail-house {
+  position: absolute;
+  z-index: 2;
+
+  left: 60%;
+  bottom: 25%;
+
+  font-size: 70px;
+
+  filter: drop-shadow(3px 3px 0 #4b526b);
+}
+/* ───────────────
+   LAGUINHO
+─────────────── */
+
+.pond {
+  position: absolute;
+  z-index: 1;
+
+  left:5px;
+  right:auto;
+  
+  bottom:145px;
+  top:auto;
+
+  width: 145px;
+  height: 65px;
+
+  background: #a2d2ff;
+
+  border: 4px solid #4b526b;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 22px;
+
+  box-shadow: 5px 5px 0 #9ac8a6ed;
+}
+
+/* pequenas ondas */
+
+.pond::before {
+  content: "﹏﹏﹏";
+
+  position: absolute;
+
+  top: 15px;
+  left: 25px;
+
+  font-size: 18px;
+}
+
+.pond::after {
+  content: "﹏﹏";
+
+  position: absolute;
+
+  bottom: 12px;
+  right: 25px;
+
+  font-size: 15px;
+}
+/* ───────────────
+   DECORAÇÃO DO LAGO
+─────────────── */
+
+.garden-decor span {
+  position: absolute;
+  z-index: 3;
+
+  filter: drop-shadow(2px 2px 0 #4b526b);
+}
+
+.rock {
+  font-size: 22px;
+}
+
+.rock-1 {
+  left: 5%;
+  bottom:85%;
+}
+
+.rock-2 {
+  left: 15%;
+  bottom: 90%;
+}
+
+.mushroom {
+  font-size: 27px;
+}
+
+.mushroom-1 {
+  left:10%;
+  bottom:90%;
+}
+
+.mushroom-2 {
+  left: 35%;
+  bottom:80%;
+}
+/* ───────────────
+   BORBOLETINHAS
+─────────────── */
+
+.butterfly {
+  position: absolute;
+  z-index: 6;
+
+  font-size: 22px;
+
+  animation: butterflyFloat 5s ease-in-out infinite;
+}
+
+.butterfly-1 {
+  top: 28%;
+  left: 18%;
+}
+
+.butterfly-2 {
+  top: 38%;
+  right: 18%;
+
+  animation-delay: 2s;
+}
+
+@keyframes butterflyFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(12px, -15px);
+  }
+
+}
+
+  .moon {
+  position: absolute;
+  z-index: 5;
+
+  top: 35px;
+  right: 12%;
+
+  font-size: 42px;
+
+  filter: drop-shadow(0 0 8px #fff1a8);
+
+  animation: moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px #fff1a8);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 14px #fff1a8);
+  }
+
+}
+  /* ───────────────
+   CAMINHO DE PEDRAS
+─────────────── */
+
+.stone-path {
+  position: absolute;
+  z-index:2 ;
+
+  left:40%;
+  bottom:15%;
+
+  width: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  transform: rotate(110deg);
+}
+
+.stone-path span {
+  display: block;
+
+  width: 18px;
+  height: 12px;
+
+  background: #7d4b2b;
+
+  border: 2px solid #1b5900;
+
+  border-radius: 50%;
+
+  font-size: 0;
+
+  box-shadow: 2px 2px 0 #8a8a8aa5;
+}
+
+.stone-path span:nth-child(2) {
+  margin-left: 10px;
+}
+
+.stone-path span:nth-child(3) {
+  margin-left: -5px;
+}
+
+.stone-path span:nth-child(4) {
+  margin-left: 8px;
+}
+
+.stone-path span:nth-child(5) {
+  margin-left: -3px;
+  }
